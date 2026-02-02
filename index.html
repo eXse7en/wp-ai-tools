@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WP Post Generator (Gutenberg) — Kesehatan</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <h1>WP Post Generator (Gutenberg)</h1>
+      <p class="sub">Konten kesehatan edukasi santai. Output siap paste ke Jetpack → “Beralih ke Editor Kode”.</p>
+    </header>
+
+    <section class="card">
+      <h2>Input</h2>
+
+      <label>Topik</label>
+      <input id="topic" placeholder="Contoh: Demam pada dewasa" />
+
+      <label>Keyword utama (opsional)</label>
+      <input id="keyword" placeholder="Contoh: cara mengatasi demam" />
+
+      <div class="row">
+        <div>
+          <label>Panjang</label>
+          <select id="length">
+            <option value="800-1200">Standar (800–1200 kata)</option>
+            <option value="500-700">Pendek (500–700 kata)</option>
+            <option value="1200-1600">Panjang (1200–1600 kata)</option>
+          </select>
+        </div>
+        <div>
+          <label>Tambahkan Mitos vs Fakta</label>
+          <select id="myths">
+            <option value="yes">Ya</option>
+            <option value="no">Tidak</option>
+          </select>
+        </div>
+      </div>
+
+      <label>CTA tombol (teks)</label>
+      <input id="ctaText" value="Baca Panduan Lainnya" />
+
+      <label>CTA tombol (link)</label>
+      <input id="ctaUrl" value="https://contoh.com" />
+
+      <label>Worker URL (endpoint)</label>
+      <input id="workerUrl" placeholder="Tempel URL Worker kamu (contoh: https://xxxx.workers.dev/generate)" />
+
+      <button id="btnGen">Generate</button>
+      <p id="status" class="status"></p>
+    </section>
+
+    <section class="card">
+      <div class="tabs">
+        <button class="tab active" data-tab="gutenberg">Gutenberg (Paste)</button>
+        <button class="tab" data-tab="seo">SEO Pack</button>
+      </div>
+
+      <div id="tab-gutenberg" class="tabpane show">
+        <div class="toolbar">
+          <button id="btnCopyGutenberg" disabled>Copy Gutenberg</button>
+        </div>
+        <textarea id="outGutenberg" rows="18" placeholder="Hasil Gutenberg akan muncul di sini..." spellcheck="false"></textarea>
+      </div>
+
+      <div id="tab-seo" class="tabpane">
+        <div class="toolbar">
+          <button id="btnCopySeo" disabled>Copy SEO Pack</button>
+        </div>
+        <textarea id="outSeo" rows="10" placeholder="SEO Pack akan muncul di sini..." spellcheck="false"></textarea>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>⚠️ Edukasi umum, bukan diagnosis. Selalu sertakan disclaimer & tanda bahaya.</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

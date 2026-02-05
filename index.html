@@ -26,17 +26,33 @@
         <div>
           <label>Panjang</label>
           <select id="length">
-            <option value="800-1200">Standar (800–1200 kata)</option>
+            <option value="800-1200" selected>Standar (800–1200 kata)</option>
             <option value="500-700">Pendek (500–700 kata)</option>
             <option value="1200-1600">Panjang (1200–1600 kata)</option>
           </select>
         </div>
+
+        <div>
+          <label>Model</label>
+          <select id="model">
+            <option value="gemini-2.5-flash" selected>gemini-2.5-flash (cepat)</option>
+            <option value="gemini-2.5-pro">gemini-2.5-pro (lebih pintar)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
         <div>
           <label>Tambahkan Mitos vs Fakta</label>
           <select id="myths">
-            <option value="yes">Ya</option>
+            <option value="yes" selected>Ya</option>
             <option value="no">Tidak</option>
           </select>
+        </div>
+
+        <div>
+          <label>FAQ (selalu 3)</label>
+          <input value="Aktif (otomatis)" disabled />
         </div>
       </div>
 
@@ -57,6 +73,8 @@
       <div class="tabs">
         <button class="tab active" data-tab="gutenberg">Gutenberg (Paste)</button>
         <button class="tab" data-tab="seo">SEO Pack</button>
+        <button class="tab" data-tab="disclaimer">Disclaimer</button>
+        <button class="tab" data-tab="schema">FAQ Schema</button>
       </div>
 
       <div id="tab-gutenberg" class="tabpane show">
@@ -72,10 +90,24 @@
         </div>
         <textarea id="outSeo" rows="10" placeholder="SEO Pack akan muncul di sini..." spellcheck="false"></textarea>
       </div>
+
+      <div id="tab-disclaimer" class="tabpane">
+        <div class="toolbar">
+          <button id="btnCopyDisclaimer" disabled>Copy Disclaimer</button>
+        </div>
+        <textarea id="outDisclaimer" rows="6" placeholder="Disclaimer akan muncul di sini..." spellcheck="false"></textarea>
+      </div>
+
+      <div id="tab-schema" class="tabpane">
+        <div class="toolbar">
+          <button id="btnCopySchema" disabled>Copy FAQ Schema (JSON-LD)</button>
+        </div>
+        <textarea id="outSchema" rows="12" placeholder="FAQ Schema JSON-LD akan muncul di sini..." spellcheck="false"></textarea>
+      </div>
     </section>
 
     <footer class="footer">
-      <p>⚠️ Edukasi umum, bukan diagnosis. Selalu sertakan disclaimer & tanda bahaya.</p>
+      <p>⚠️ Edukasi umum, bukan diagnosis. Jika kondisi berat/memburuk, periksa ke fasilitas kesehatan.</p>
     </footer>
   </main>
 
